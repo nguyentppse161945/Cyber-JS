@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <form class="row gy-3 align-items-center px-2">
+      <div class="col-12  col-lg-4">
+        <select class="form-control form__input" id="type" onchange="disableInput()">
+          <option value="">Chọn Khách Hàng</option>
+          <option value="user">Hộ Dân</option>
+          <option value="company">Doanh Nghiệp</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg-4">
+        <input type="text" class="form-control form__input" id="ID" placeholder="Nhập mã khách hàng" />
+      </div>
+      <div class="col-12 col-lg-4">
+        <input type="number" class="form-control form__input" id="number" placeholder="Số kênh đăng ký" />
+      </div>
+      <div class="col-12 col-lg-4">
+        <input type="number" style="display: none;" class="form-control form__input" id="connects" placeholder="Số kết nối" />
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary me-1 mb-1" type="button" id="btnNet" onclick="calcu()">Tính tiền</button>
+      </div>
+      <div class="alert alert-success" role="alert">
+        👉<span id="txtNet"></span>
+      </div>
+    </form>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function calcu() {
+        let type = document.getElementById("type").value;
+        let number = +document.getElementById("number").value;
+        let connects = +document.getElementById("connects").value;
+        
+        if (type === "user") {
+          let total = number * 7.5 + 4.5 + 20.5;
+          display(total);
+        } else   if (type === "company"){
+          if (connects < 10) {
+            let total = number * 50 + 15 + 75;
+            display(total);
+          } else {
+            let total = number * 50 + (connects - 10) * 5 + 75 + 15;
+            display(total);
+          }
+        }else{
+          display(null)
+        }
+      }
+
+      function display(total) {
+        document.getElementById("txtNet").textContent = "Cái giá phải trả là: $" + total;
+      }
+    </script>
+  </body>
+</html>

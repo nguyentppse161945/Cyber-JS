@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Tính điểm chuẩn</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>  
+  <form class="row gy-3 align-items-center px-2">
+    <div class="col-12 col-lg-4">
+        <input type="number" class="form-control form__input" id="inputScore1" placeholder="Điểm chuẩn" fdprocessedid="j9vlh4">
+    </div>
+    <div class="col-12 col-lg-4">
+        <select class="form-control form__input" name="" id="selLocation" fdprocessedid="ix9zge">
+            <option value="0">Chọn khu vực</option>
+            <option value="2">A</option>
+            <option value="1">B</option>
+            <option value="0.5">C</option>
+            <option value="x">không</option>
+        </select>
+    </div>
+    <div class="col-12 col-lg-4">
+        <select class="form-control form__input" name="" id="selUser" fdprocessedid="718kka">
+            <option value="0">Chọn đối tượng </option>
+            <option value="2.5">1</option>
+            <option value="1.5">2</option>
+            <option value="1">3</option>
+            <option value="0">không</option>
+        </select>
+    </div>
+    <div class="col-12 col-lg-4">
+        <input type="number" class="form-control form__input" id="inputScore2" placeholder="Điểm môn thứ 1" fdprocessedid="uafwyb">
+    </div>
+    <div class="col-12 col-lg-4">
+        <input type="number" class="form-control form__input" id="inputScore3" placeholder="Điểm môn thứ 2" fdprocessedid="m3y05y">
+    </div>
+    <div class="col-12 col-lg-4">
+        <input type="number" class="form-control form__input" id="inputScore4" placeholder="Điểm môn thứ 3" fdprocessedid="gjv26x">
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary me-1 mb-1" type="button" onclick="ex1()" fdprocessedid="0p7z3a">Kết
+            Quả</button>
+    </div>
+    <div class="alert alert-success" role="alert">
+        👉<span id="txtResult"></span>
+    </div>
+</form>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+  integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+</script>
+<script src="./math.js"></script>
+</body>
+
+</html>
